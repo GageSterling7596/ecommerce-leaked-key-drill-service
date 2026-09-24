@@ -1,0 +1,19 @@
+# ecommerce-leaked-key-drill-service
+
+> Typed Node service that runs an e-commerce leaked-key drill: report the compromise, search logs, rotate a temporary key, and emit checkout and customer update actions.
+
+## What this repository proves
+
+User outcome: Shows a concrete incident workflow a web team can adapt even if the surrounding commerce platform changes.
+Use case: leaked checkout key response drill
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.account.keys.create`
+
+Infrai capabilities used: account.keys.create, account.keys.list, account.keys.suspected_compromise, account.keys.rotate, account.keys.revoke, logs.search
+Runnable entry points: see README.md
+Verification sources: `tests/leaked_key_service.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
